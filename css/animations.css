@@ -1,0 +1,56 @@
+
+.collapse-margin {
+    animation-name: collapseMargin;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    
+}
+
+@keyframes collapseMargin {
+    0% {
+        
+    }
+    100% {
+        margin-top: 0px;
+    }
+}
+
+
+
+
+.slide-into-view {
+    animation-name: slideIntoView;
+    animation-duration: 1s;
+    animation-fill-mode: forwards;
+}
+
+.slide-out-of-view {
+    animation-name: slideOutOfView;
+    animation-duration: 0.8s;
+    animation-fill-mode: forwards;
+}
+
+
+@keyframes slideIntoView {
+    0%{
+        left: -300px;
+    }
+    80% {
+        left: 10px;
+    }
+    100%{
+        left:0px;
+    }
+}
+
+@keyframes slideOutOfView {
+    0%{
+        left: 0px;
+    }
+    20% {
+        left: 10px;
+    }
+    100%{
+        left:-300px;
+    }
+}

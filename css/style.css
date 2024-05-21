@@ -1,0 +1,319 @@
+@import url('https://fonts.googleapis.com/css2?family=Kalam:wght@300;400;700&display=swap');
+
+*{
+    padding: 0px;
+    margin: 0px;
+    box-sizing: border-box;
+}
+
+:root{
+    /* SIZE */
+    --INPUT-HEIGHT: 50px;
+    --DESCRIPTION-HEIGHT: 300px;
+    --DESCRIPTION-WIDTH: 300px;
+    --MORE-INFO-MAX-WIDTH: 400px;
+
+
+    scroll-behavior: smooth;
+}
+
+/* SCROLLBAR */
+
+/* This will affect the scrollbar in Chrome, Safari and Edge*/
+::-webkit-scrollbar {
+    width: 15px;
+    border-radius: 1rem;
+}
+
+::-webkit-scrollbar-track {
+    background: pink; 
+    /* border-radius: 0px 1rem 1rem 0px; */
+    border: 2px dotted black;
+}
+ 
+::-webkit-scrollbar-thumb {
+    background: rgba(0, 0, 0, 0.5); 
+    border-radius: 1rem;
+    /* height: 2px; */
+    border: 1px solid black;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: magenta; 
+    
+} 
+
+/* This will affect the scrollbar in Firefox */
+
+
+/* END SCROLLBAR */
+
+
+
+
+body{
+    
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    font-size: min(6vw, 2rem);
+    font-family: "Kalam", cursive;
+    background: transparent;
+    background-size: cover;
+    background-position: center;
+    color: white;
+    overflow-x: hidden;
+
+
+}
+
+.outer-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    width: 100vw;
+    height: 100vh;
+    border: 3px solid black;
+    background-image: url("../backgrounds/cloudy_background_2.jpg");
+    background-size: cover;
+    background-position: center;
+    z-index: 3;
+}
+
+
+.error-p {
+    position: fixed;
+    top: 10px;
+    text-align: center;
+    width: 100%;
+    display: none;
+    text-shadow: 3px 3px 3px rgba(0, 0, 0, 0.8);
+    color: magenta
+}
+
+.nowrap {
+    white-space: nowrap;
+}
+
+.container {
+    min-width: 350px ;
+    display: flex;
+    flex-direction: column;
+    border: 2px solid rgb(225, 12, 229);
+    box-shadow: 0px 0px 50px 0px pink;
+    border-radius: 2rem;
+    /* margin: auto; */
+    padding: 2rem;
+    row-gap: 2rem;
+    background-color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+/* HEADER */
+
+.weather-form{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1em;
+
+}
+
+.location-input{
+    height: var(--INPUT-HEIGHT);
+    border-radius: 2rem;
+    font-size: 1rem;
+    /* background-color: rgba(255, 255, 255, 0.4); */
+    
+}
+.location-input:focus {
+    background-color: rgba(37, 36, 36, 0.721);
+}
+
+.search-button {
+    display: grid;
+    place-content: center;
+    height: var(--INPUT-HEIGHT);
+    width: var(--INPUT-HEIGHT);
+    flex-shrink: 0;
+    border-radius: 50%;
+}
+
+.search-button:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+}
+
+input, button{
+    font-size: inherit;
+    text-align: center;
+    background-color: transparent;
+    border: 4px dotted black;
+    box-shadow: 0px 0px 8px magenta, 0px 0px 8px magenta inset;
+    font-family: cursive;
+    color: white;
+}
+
+:is(input, button):hover{
+    border: 4px dashed magenta;
+}
+
+
+
+/* MAIN */
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    flex-grow: 0;
+    /* margin-block: 0px; */
+}
+
+.weather-img {
+    max-height: 150px;
+    width: 40%;
+
+}
+.weather-img:hover {
+    cursor: pointer;
+    
+}
+
+/* FOOTER */
+
+.footer {
+    display: flex;
+    justify-content: space-evenly;
+    gap: 1rem;
+    max-width: 100%;
+    font-size: min(4vw, 30px);
+
+}
+.footer-details {
+    display: flex;
+    flex-direction: column;
+}
+
+.footer__left, .footer__right {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
+
+.weather-svg {
+    opacity: 0.5;
+}
+
+/* MORE INFO */
+
+.more-info {
+    scroll-margin-top: 5rem;
+
+    display: none;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    min-width: 50%;
+    max-width: var(--MORE-INFO-MAX-WIDTH);
+    gap: 1rem;
+    margin-top: 5rem;
+
+    
+
+}
+
+.name-value { 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 1rem;
+    width: 100%;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.4);
+    box-shadow: 0px 0px 6px rgb(255, 255, 255), 0px 0px 15px rgb(255, 255, 255) inset;
+    color: pink;
+    transition-property: transform;
+    transition-duration: 0.4s;
+
+}
+
+.name-value:hover { 
+    transform: scale(1.05);
+
+}
+
+.more-info-link:any-link {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 1rem;
+    border-radius: 1rem;
+    background-color: rgba(0, 0, 0, 0.6);
+    margin-top: 2rem;
+    font-size: 1rem;
+    text-decoration: none;
+    border: 2px dotted black;
+    box-shadow: 0px 0px 50px 0px pink;
+    color: white;
+    box-shadow: 0px 0px 8px magenta, 0px 0px 8px magenta inset;
+    display: none;
+    
+}
+.more-info-link:hover {
+    transform: scale(1.1);
+    cursor: pointer;
+    border: 4px dashed black;
+}
+
+.more-info-background {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    background-image: url("../backgrounds/stormy_background_1.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
+    /* z-index: 1; */
+}
+
+
+.data-description {
+    z-index: 2; 
+    width: 200px;
+    max-height: var(--DESCRIPTION-HEIGHT);
+    position: fixed;
+    left: 0px;
+    top: calc(45% - var(--DESCRIPTION-HEIGHT)/2);
+    background-color: rgba(0, 0, 0, 0.35);  
+    border: 5px dotted black;
+    border-radius: 0px 1rem 1rem 0px;
+    box-shadow: 0px 0px 6px rgb(255, 255, 255), 0px 0px 15px rgb(255, 255, 255) inset;
+    overflow-y: auto ;
+    overflow-x: hidden;
+    font-size: 1.2rem;
+    text-align: center;
+    padding: 0.5rem;
+    left: -300px;
+
+}
+
+/* media queris */
+/* Media query for max-width and not min-width, because original code already
+is compatible with both mobile and desktop. Just one change needed for mobile. */
+@media screen and (max-width: 800px ){
+    .data-description {
+        background-color: rgba(0, 0, 0, 0.8);  
+        top: calc(30% - var(--DESCRIPTION-HEIGHT)/2);
+
+    }
+}
